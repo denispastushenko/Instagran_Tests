@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import static java.lang.System.out;
 import java.sql.*;
 
@@ -23,7 +22,7 @@ public class InstagramTest {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "Z:/Downloads/chromedriver.exe");
-        webDriver = new ChromeDriver();
+        webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
@@ -36,7 +35,7 @@ public class InstagramTest {
         JavascriptExecutor jse = (JavascriptExecutor) webDriver;
         jse.executeScript("window.scrollBy(0, 1000)", "");
         webDriver.findElement(By.xpath("//a[@class = '_oidfu']")).click();
-        WebElement webElement = webDriver.findElement(By.xpath("//span[@class='_e8fkl']"));
+        WebElement webElement = webDriver.findElement(By.xpath("//span[@class='_bkw5z']"));
         String elem = webElement.getText();
         System.out.println(elem);
         int rw = Integer.parseInt(elem.replaceAll(",", ""));
