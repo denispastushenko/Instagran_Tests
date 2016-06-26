@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.awt.*;
 import java.io.IOException;
 import java.util.*;
