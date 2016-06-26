@@ -5,9 +5,15 @@ import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.awt.*;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.rmi.Remote;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,11 +24,12 @@ public class InstagramTest {
     private  static String SITE = "https://www.instagram.com/";
     private  static String BITCH = "_sv.k_";
     private  static int scroll = 250;
-    private WebDriver webDriver;
+    private RemoteWebDriver webDriver;
     @Before
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         System.setProperty("webdriver.chrome.driver", "Z:/Downloads/chromedriver.exe");
-        webDriver = new FirefoxDriver();
+        URL testrem = new URL("http://localhost:4445/wd/hub");
+        webDriver = new RemoteWebDriver(testrem, DesiredCapabilities.firefox());
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
