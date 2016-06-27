@@ -4,7 +4,11 @@ import java.io.*;
 import java.net.URL;
 
 public class ImageDownload {
+
     public static final String FILE_WAY = "Z:/MyWorkSpase/ValentynTests/InstagramTest(4)/VIKUS/Test_imege.jpg";
+
+    public static final String FILE_WAY = "Z:/MyWorkSpase/ValentynTests/InstagramTest(4)/VIKUS/";
+
 
     public File saver( String url1,String destination) throws IOException {
         URL url = new URL(url1);
