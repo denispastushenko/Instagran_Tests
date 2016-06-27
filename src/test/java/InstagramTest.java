@@ -28,7 +28,7 @@ public class InstagramTest {
     @Before
     public void setUp() throws MalformedURLException {
         System.setProperty("webdriver.chrome.driver", "Z:/Downloads/chromedriver.exe");
-        URL testrem = new URL("http://localhost:4445/wd/hub");
+        URL testrem = new URL("http://192.168.201.1:4445/wd/hub");
         webDriver = new RemoteWebDriver(testrem, DesiredCapabilities.firefox());
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -71,7 +71,7 @@ public class InstagramTest {
         JavascriptExecutor jse = (JavascriptExecutor) webDriver;
         jse.executeScript("window.scrollBy(0, 1000)", "");
         webDriver.findElement(By.xpath("//a[@class = '_oidfu']")).click();
-        WebElement webElement = webDriver.findElement(By.xpath("//span[@class='_e8fkl']"));
+        WebElement webElement = webDriver.findElement(By.xpath("//span[@class='_bkw5z']"));
         String elem = webElement.getText();
         System.out.println(elem);
         int rw = Integer.parseInt(elem.replaceAll(",", ""));
