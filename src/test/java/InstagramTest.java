@@ -28,7 +28,7 @@ public class InstagramTest {
     @Before
     public void setUp() throws MalformedURLException {
         System.setProperty("webdriver.chrome.driver", "Z:/Downloads/chromedriver.exe");
-        URL testrem = new URL("http://192.168.201.1:4445/wd/hub");
+        URL testrem = new URL("http://localhost:4445/wd/hub");
         webDriver = new RemoteWebDriver(testrem, DesiredCapabilities.firefox());
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
